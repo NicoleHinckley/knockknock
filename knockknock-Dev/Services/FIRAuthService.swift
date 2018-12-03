@@ -38,7 +38,6 @@ class FIRAuthService {
     
     func signOut(completion : @escaping (_ error : Error?)->()){
         do {
-            
             try Auth.auth().signOut()
             completion(nil)
         } catch let signOutError {

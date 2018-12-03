@@ -15,12 +15,6 @@ class CreateAccountVC: UIViewController {
     @IBOutlet weak var emailTF : UITextField!
     @IBOutlet weak var passwordTF : UITextField!
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-       
-      
-    }
-    
     @IBAction func createAccount(){
         guard let username = usernameTF.text, usernameTF.text != "", let password = passwordTF.text, passwordTF.text != "",  let email = emailTF.text, emailTF.text != "" else {
             self.alert(message: "Make sure to fill out all of the fields", title: "Oops")

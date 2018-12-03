@@ -20,6 +20,18 @@ class LoginVC: UIViewController {
               self.performSegue(withIdentifier: "toHome", sender: nil)
             }
         }
+        
+       
+    }
+    override func viewDidAppear(_ animated: Bool) {
+         guard let imageData = #imageLiteral(resourceName: "jonsnow").pngData() else { return }
+        FIRStorageService.shared.addProfileImage(forUID: "123", withImageData: imageData) { (url, error) in
+            guard let url = url else {
+                self.alert(message: error?.localizedDescription ?? "Unknown error uploading image", title : "Error")
+                return
+            }
+            print(url)
+        }
     }
 
     @IBAction func signIn(){
