@@ -8,20 +8,32 @@
 
 /* Begin PBXBuildFile section */
 		AA2BA01521B556470037636A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA2BA01421B556470037636A /* AppDelegate.swift */; };
-		AA2BA01721B556470037636A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA2BA01621B556470037636A /* ViewController.swift */; };
+		AA2BA01721B556470037636A /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA2BA01621B556470037636A /* LoginVC.swift */; };
 		AA2BA01A21B556470037636A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AA2BA01821B556470037636A /* Main.storyboard */; };
 		AA2BA01C21B556480037636A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AA2BA01B21B556480037636A /* Assets.xcassets */; };
 		AA2BA01F21B556480037636A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AA2BA01D21B556480037636A /* LaunchScreen.storyboard */; };
+		AA2BA02721B559C70037636A /* FIRAuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA2BA02621B559C70037636A /* FIRAuthService.swift */; };
+		AA2BA02D21B55CDE0037636A /* CreateAccountVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA2BA02C21B55CDE0037636A /* CreateAccountVC.swift */; };
+		AA2BA02F21B55DB00037636A /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = AA2BA02E21B55DB00037636A /* GoogleService-Info.plist */; };
+		AA2BA03221B563B90037636A /* UIViewController+Alerts.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA2BA03121B563B90037636A /* UIViewController+Alerts.swift */; };
+		D15B3A7F96FF046AE2FF38BA /* Pods_knockknock_Dev.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0E0BCA2FF15ED7F1B91983A4 /* Pods_knockknock_Dev.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0E0BCA2FF15ED7F1B91983A4 /* Pods_knockknock_Dev.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_knockknock_Dev.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		2FAC9AF84D8F08909088C0BD /* Pods-knockknock-Dev.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-knockknock-Dev.debug.xcconfig"; path = "Pods/Target Support Files/Pods-knockknock-Dev/Pods-knockknock-Dev.debug.xcconfig"; sourceTree = "<group>"; };
+		7B36E2F971D09B0C770701F5 /* Pods-knockknock-Dev.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-knockknock-Dev.release.xcconfig"; path = "Pods/Target Support Files/Pods-knockknock-Dev/Pods-knockknock-Dev.release.xcconfig"; sourceTree = "<group>"; };
 		AA2BA01121B556470037636A /* knockknock-Dev.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "knockknock-Dev.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		AA2BA01421B556470037636A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		AA2BA01621B556470037636A /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		AA2BA01621B556470037636A /* LoginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
 		AA2BA01921B556470037636A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		AA2BA01B21B556480037636A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		AA2BA01E21B556480037636A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		AA2BA02021B556480037636A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		AA2BA02621B559C70037636A /* FIRAuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FIRAuthService.swift; sourceTree = "<group>"; };
+		AA2BA02C21B55CDE0037636A /* CreateAccountVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateAccountVC.swift; sourceTree = "<group>"; };
+		AA2BA02E21B55DB00037636A /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		AA2BA03121B563B90037636A /* UIViewController+Alerts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Alerts.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,17 +41,37 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D15B3A7F96FF046AE2FF38BA /* Pods_knockknock_Dev.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		05ED482AA97E9F2F096D2A92 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				2FAC9AF84D8F08909088C0BD /* Pods-knockknock-Dev.debug.xcconfig */,
+				7B36E2F971D09B0C770701F5 /* Pods-knockknock-Dev.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		1BFC6073C2F2143ADDCDA101 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				0E0BCA2FF15ED7F1B91983A4 /* Pods_knockknock_Dev.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		AA2BA00821B556470037636A = {
 			isa = PBXGroup;
 			children = (
 				AA2BA01321B556470037636A /* knockknock-Dev */,
 				AA2BA01221B556470037636A /* Products */,
+				05ED482AA97E9F2F096D2A92 /* Pods */,
+				1BFC6073C2F2143ADDCDA101 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -54,14 +86,58 @@
 		AA2BA01321B556470037636A /* knockknock-Dev */ = {
 			isa = PBXGroup;
 			children = (
+				AA2BA03021B563A80037636A /* Extensions */,
+				AA2BA02B21B55CB80037636A /* Services */,
+				AA2BA02A21B55CB20037636A /* Model */,
+				AA2BA02921B55CAD0037636A /* View */,
+				AA2BA02821B55CA80037636A /* Controller */,
 				AA2BA01421B556470037636A /* AppDelegate.swift */,
-				AA2BA01621B556470037636A /* ViewController.swift */,
 				AA2BA01821B556470037636A /* Main.storyboard */,
 				AA2BA01B21B556480037636A /* Assets.xcassets */,
+				AA2BA02E21B55DB00037636A /* GoogleService-Info.plist */,
 				AA2BA01D21B556480037636A /* LaunchScreen.storyboard */,
 				AA2BA02021B556480037636A /* Info.plist */,
 			);
 			path = "knockknock-Dev";
+			sourceTree = "<group>";
+		};
+		AA2BA02821B55CA80037636A /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				AA2BA01621B556470037636A /* LoginVC.swift */,
+				AA2BA02C21B55CDE0037636A /* CreateAccountVC.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		AA2BA02921B55CAD0037636A /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		AA2BA02A21B55CB20037636A /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		AA2BA02B21B55CB80037636A /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				AA2BA02621B559C70037636A /* FIRAuthService.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		AA2BA03021B563A80037636A /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				AA2BA03121B563B90037636A /* UIViewController+Alerts.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -71,9 +147,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = AA2BA02321B556480037636A /* Build configuration list for PBXNativeTarget "knockknock-Dev" */;
 			buildPhases = (
+				C5468A552688FE2F718D4A38 /* [CP] Check Pods Manifest.lock */,
 				AA2BA00D21B556470037636A /* Sources */,
 				AA2BA00E21B556470037636A /* Frameworks */,
 				AA2BA00F21B556470037636A /* Resources */,
+				ADEA34BA409C142AB7C72E46 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -122,6 +200,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AA2BA02F21B55DB00037636A /* GoogleService-Info.plist in Resources */,
 				AA2BA01F21B556480037636A /* LaunchScreen.storyboard in Resources */,
 				AA2BA01C21B556480037636A /* Assets.xcassets in Resources */,
 				AA2BA01A21B556470037636A /* Main.storyboard in Resources */,
@@ -130,12 +209,88 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		ADEA34BA409C142AB7C72E46 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-knockknock-Dev/Pods-knockknock-Dev-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/BoringSSL/openssl.framework",
+				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
+				"${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework",
+				"${BUILT_PRODUCTS_DIR}/NVActivityIndicatorView/NVActivityIndicatorView.framework",
+				"${BUILT_PRODUCTS_DIR}/Protobuf/Protobuf.framework",
+				"${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework",
+				"${BUILT_PRODUCTS_DIR}/gRPC/GRPCClient.framework",
+				"${BUILT_PRODUCTS_DIR}/gRPC-C++/grpcpp.framework",
+				"${BUILT_PRODUCTS_DIR}/gRPC-Core/grpc.framework",
+				"${BUILT_PRODUCTS_DIR}/gRPC-ProtoRPC/ProtoRPC.framework",
+				"${BUILT_PRODUCTS_DIR}/gRPC-RxLibrary/RxLibrary.framework",
+				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
+				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/openssl.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleUtilities.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/NVActivityIndicatorView.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Protobuf.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDWebImage.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GRPCClient.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/grpcpp.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/grpc.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ProtoRPC.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxLibrary.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-knockknock-Dev/Pods-knockknock-Dev-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C5468A552688FE2F718D4A38 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-knockknock-Dev-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		AA2BA00D21B556470037636A /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AA2BA01721B556470037636A /* ViewController.swift in Sources */,
+				AA2BA01721B556470037636A /* LoginVC.swift in Sources */,
+				AA2BA02721B559C70037636A /* FIRAuthService.swift in Sources */,
+				AA2BA02D21B55CDE0037636A /* CreateAccountVC.swift in Sources */,
+				AA2BA03221B563B90037636A /* UIViewController+Alerts.swift in Sources */,
 				AA2BA01521B556470037636A /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -280,6 +435,7 @@
 		};
 		AA2BA02421B556480037636A /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2FAC9AF84D8F08909088C0BD /* Pods-knockknock-Dev.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -298,6 +454,7 @@
 		};
 		AA2BA02521B556480037636A /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7B36E2F971D09B0C770701F5 /* Pods-knockknock-Dev.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
