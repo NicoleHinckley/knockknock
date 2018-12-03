@@ -26,19 +26,24 @@ class CreateAccountVC: UIViewController {
             self.alert(message: "Make sure to fill out all of the fields", title: "Oops")
             return
         }
-        let userDict = ["username" : username]
-        FIRAuthService.shared.createUserWith(email: email, password: password, userDict: userDict) { (user, error) in
+  
+        FIRAuthService.shared.createUserWith(email: email, password: password) { (user, error) in
             guard error == nil  else {
                 self.alert(message: error?.localizedDescription ?? "Unknown error creating an account", title: "Error")
                 return
             }
             guard user != nil else {
                 self.alert(message: "Unknown error creating an account", title: "Error")
-                return 
+                return
             }
+            
+            let userDict = ["username" : username]
+            FIRFireStoreService.shared.createUser(withData: userDict, completion: { (error) in
+                if error != nil {
+                    self.alert(message: "Unknown error saving your username, try again later from your profile", title: "Error")
+                }
+            })
             self.performSegue(withIdentifier: "toHome", sender: nil)
         }
     }
-    
-    
 }

@@ -14,7 +14,7 @@ class FIRAuthService {
     private init () {}
     static let shared = FIRAuthService()
     
-    func createUserWith(email : String, password : String, userDict : [String : Any], completion : @escaping AuthCompletion) {
+    func createUserWith(email : String, password : String, completion : @escaping AuthCompletion) {
         Auth.auth().createUser(withEmail: email, password: password) { (authResult, error) in
             if error != nil {
                 completion(nil, error)
@@ -38,6 +38,7 @@ class FIRAuthService {
     
     func signOut(completion : @escaping (_ error : Error?)->()){
         do {
+            
             try Auth.auth().signOut()
             completion(nil)
         } catch let signOutError {

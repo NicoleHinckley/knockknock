@@ -16,6 +16,7 @@
 		AA2BA02D21B55CDE0037636A /* CreateAccountVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA2BA02C21B55CDE0037636A /* CreateAccountVC.swift */; };
 		AA2BA02F21B55DB00037636A /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = AA2BA02E21B55DB00037636A /* GoogleService-Info.plist */; };
 		AA2BA03221B563B90037636A /* UIViewController+Alerts.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA2BA03121B563B90037636A /* UIViewController+Alerts.swift */; };
+		AA2BA03421B567E60037636A /* FIRFireStoreService.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA2BA03321B567E60037636A /* FIRFireStoreService.swift */; };
 		D15B3A7F96FF046AE2FF38BA /* Pods_knockknock_Dev.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0E0BCA2FF15ED7F1B91983A4 /* Pods_knockknock_Dev.framework */; };
 /* End PBXBuildFile section */
 
@@ -34,6 +35,7 @@
 		AA2BA02C21B55CDE0037636A /* CreateAccountVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateAccountVC.swift; sourceTree = "<group>"; };
 		AA2BA02E21B55DB00037636A /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		AA2BA03121B563B90037636A /* UIViewController+Alerts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Alerts.swift"; sourceTree = "<group>"; };
+		AA2BA03321B567E60037636A /* FIRFireStoreService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FIRFireStoreService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -128,6 +130,7 @@
 			isa = PBXGroup;
 			children = (
 				AA2BA02621B559C70037636A /* FIRAuthService.swift */,
+				AA2BA03321B567E60037636A /* FIRFireStoreService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -288,6 +291,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				AA2BA01721B556470037636A /* LoginVC.swift in Sources */,
+				AA2BA03421B567E60037636A /* FIRFireStoreService.swift in Sources */,
 				AA2BA02721B559C70037636A /* FIRAuthService.swift in Sources */,
 				AA2BA02D21B55CDE0037636A /* CreateAccountVC.swift in Sources */,
 				AA2BA03221B563B90037636A /* UIViewController+Alerts.swift in Sources */,
