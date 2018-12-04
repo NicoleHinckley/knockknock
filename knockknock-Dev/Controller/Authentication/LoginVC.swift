@@ -17,7 +17,7 @@ class LoginVC: UIViewController {
         super.viewDidLoad()
         FIRAuthService.shared.checkForCurrentUser { (user) in
             if user != nil {
-              self.performSegue(withIdentifier: "toHome", sender: nil)
+            self.performSegue(withIdentifier: "toHome", sender: nil)
             }
         }
         

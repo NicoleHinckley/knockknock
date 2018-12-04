@@ -11,9 +11,11 @@
 
 import UIKit
 import Photos
+import Firebase
 
-class BubblesVC : UIViewController{
-    let imagePicker = UIImagePickerController()
+class BubblesVC : UIViewController {
+
+
     var topNavBarHeight : CGFloat = 64.0
     var tabBarHeight : CGFloat = 50.0
     var panGesture = UIPanGestureRecognizer()
@@ -25,6 +27,8 @@ class BubblesVC : UIViewController{
     var hiddenBubble : BubbleView!
     var expandedBubble : BubbleView!
     
+    var hasDoneInitialBubbleFetch = false
+    
     var beforeExpandBubbleFrame: CGRect = CGRect.zero
     
     var collectionsParticipatedIn = [Collection]()
@@ -34,13 +38,15 @@ class BubblesVC : UIViewController{
     @IBOutlet weak var bubblesStackView : UIStackView!
     
     var nameLabel : UILabel!
+   
     override func viewDidLoad() {
+        
+        observePosts()
         
         NotificationCenter.default.addObserver(self, selector: #selector(didTakePicture(_:)), name: NotificationNames.DID_TAKE_PICTURE, object: nil)
         
         addDoubleTapToScreen()
-        imagePicker.delegate = self
-        
+       
         whiteNavBar.frame = CGRect(x: 0, y: 0, width: self.view.frame.width, height: topNavBarHeight)
         whiteTabBar.frame = CGRect(x: 0, y: self.view.frame.height - tabBarHeight, width: self.view.frame.width, height: tabBarHeight)
        
@@ -54,7 +60,24 @@ class BubblesVC : UIViewController{
     
     }
     
+    func observePosts(){
+        
+        FIRFireStoreService.shared.observeJoinableCollections { (collections, error) in
+            if let err = error {
+                self.alert(message: err.localizedDescription)
+            } else {
+                guard let collections = collections else { return }
+                for collection in collections {
+                    let bubble = BubbleView(position: CGPoint(x: collection.xPos, y: collection.yPos), collection: collection)
+                    self.createBubble(bubble)
+                    self.addBubbleTimerAnimationWithCompletion(bubble)
+                }
+            }
+        }
+    }
+    
     func createBubble(_ bubble : BubbleView){
+        bubble.backgroundColor = .green
         
         bubble.isUserInteractionEnabled = true
         bubble.adjustsImageWhenHighlighted = false
@@ -70,12 +93,10 @@ class BubblesVC : UIViewController{
         
         let timeDifference = abs(fourMinsAgo - bubble.collection.timeInitiated)
         let percentage = 1 - abs(timeDifference / (4 * 60))
-        print(percentage)
+        
         bubble.animateCircle(duration: timeDifference , fromValue : percentage)
     }
-    override func viewDidAppear(_ animated: Bool) {
-    
-    }
+ 
         
         func addBubbleTimerAnimationWithCompletion(_ bub : BubbleView){
             CATransaction.begin()
@@ -188,7 +209,9 @@ class BubblesVC : UIViewController{
     
      @objc func doubleTappedView(_ sender:UITapGestureRecognizer){
         isInitiating = true
-       locationInViewToInitiatePost = CGPoint(x : sender.location(in: self.view).x - (75 / 2) , y: sender.location(in: self.view).y - (75 / 2))
+    
+        locationInViewToInitiatePost = CGPoint(x : sender.location(in: self.view).x - (75 / 2) , y: sender.location(in: self.view).y - (75 / 2))
+        createCollection(withImage: #imageLiteral(resourceName: "ygritte"), atLocationInView: locationInViewToInitiatePost)
         NotificationCenter.default.post(name: NotificationNames.TAKE_PICTURE, object: true)
     }
     
@@ -196,18 +219,34 @@ class BubblesVC : UIViewController{
     var bubbleToRespondTo : BubbleView!
     
     func createCollection(withImage image : UIImage, atLocationInView location: CGPoint){
-     
-      /*
-    //    guard let collection = Collection(dictionary: collectionInfo) else { return } // TODO: - error handle
         
-        let bubble = BubbleView(position: locationInViewToInitiatePost,  collection: collection)
-       // UserData.shared.collections.insert(collection, at: 0)
-        //UserData.shared.collections = UserData.shared.collections.sorted(by: {$0.timeInitiated > $1.timeInitiated})
-        createBubble(bubble)
-        addBubbleTimerAnimationWithCompletion(bubble)
- */
+        let time = NSDate().timeIntervalSince1970
+        
+        guard let imageData = image.pngData() else { return }
+        
+        FIRStorageService.shared.addPostImage(withImageData: imageData) { (url, error) in
+            if let error = error {
+                self.alert(message: error.localizedDescription)
+            } else {
+                guard let currentUID = Auth.auth().currentUser?.uid else { return }
+                guard let url = url else { return }
+                let uid =  UUID.init().uuidString
+                let collectionInfo : [String : Any ] = [
+                    "thumbnailURL" : url.absoluteString,
+                    "timeInitiated" : time,
+                    "posts" : "todo", // TODO: -
+                    "posterUID" : currentUID,
+                    "uid" : uid,
+                    "xPos" : location.x,
+                    "yPos" : location.y
+                    ]
+                FIRFireStoreService.shared.createCollection(withUID: uid, withData: collectionInfo, completion: { (collection, error) in
+                    print("Got it")
+                })
+        }
     }
-    
+}
+ 
     func respondToBubble(withImage image: UIImage){
         
         /*
@@ -229,6 +268,7 @@ class BubblesVC : UIViewController{
  
  */
     }
+    
     @objc func doubleTappedBubbleView(_ sender:UITapGestureRecognizer){
         
         isInitiating = false
@@ -252,14 +292,18 @@ class BubblesVC : UIViewController{
             view.addSubview(fakeBubble)
             expand(bubble : bubble, withDuration: 0.3, forView: fakeBubble)
         }
+       
         
     }
     @objc func draggedView(_ sender:UIPanGestureRecognizer){
         
+        
+        // TODO: - Animation goes crazy if post ends while dragging it around.
         // TODO: - Restrict from going outside and make this safer with guard let
         self.view.bringSubviewToFront(sender.view!)
         
         let translation = sender.translation(in: self.view)
+        
         sender.view!.center = CGPoint(x: sender.view!.center.x + translation.x, y: sender.view!.center.y + translation.y)
         sender.setTranslation(CGPoint.zero, in: self.view)
         
@@ -275,37 +319,9 @@ class BubblesVC : UIViewController{
                 sender.view!.transform = .identity
             }
             
+            guard let  bubbleTapped = sender.view as? BubbleView else { return }
+            FIRFireStoreService.shared.updateBubbleLocation(uid: bubbleTapped.collection.uid, withPosition: bubbleTapped.center)
         }
-    }
-}
-extension Int {
-    
-    var seconds: Int {
-        return self
-    }
-    
-    var minutes: Int {
-        return self.seconds * 60
-    }
-    
-    var hours: Int {
-        return self.minutes * 60
-    }
-    
-    var days: Int {
-        return self.hours * 24
-    }
-    
-    var weeks: Int {
-        return self.days * 7
-    }
-    
-    var months: Int {
-        return self.weeks * 4
-    }
-    
-    var years: Int {
-        return self.months * 12
     }
 }
 
@@ -315,12 +331,3 @@ extension Double {
     }
 }
 
-extension BubblesVC : UIImagePickerControllerDelegate , UINavigationControllerDelegate {
-  @objc  func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
-        if let pickedImage = info[UIImagePickerController.InfoKey.originalImage] as? UIImage {
-            print("Success")
-        }
-        
-        dismiss(animated: true, completion: nil)
-    }
-}

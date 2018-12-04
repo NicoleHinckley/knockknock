@@ -79,7 +79,6 @@ extension FriendsVC : UITableViewDelegate , UITableViewDataSource {
 
 extension FriendsVC : FriendListInteractionDelegate {
     func added(friend: Friend, atRow row: Int) {
-        //friend.added = true
         tableView.reloadData()
     }
     

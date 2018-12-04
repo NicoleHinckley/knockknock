@@ -14,7 +14,7 @@ import UIKit
 class CollectionsVC : UIViewController {
     
 
-   // var collections = [Collection]()
+    var collections = [Collection]()
     var topNavBarHeight : CGFloat = 64.0
     var tabBarHeight : CGFloat = 64.0
   
@@ -43,7 +43,7 @@ class CollectionsVC : UIViewController {
         // TODO: - Make a subclass
         
         refreshTimer = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(timerFired), userInfo: nil, repeats: true)//(timeInterval: 5.0, target: self, selector: #selector(timerFired), userInfo: nil, repeats: true)
-        fetchCollections()
+        observePosts()
         collectionView.delegate = self
         collectionView.dataSource = self
         collectionView.showsVerticalScrollIndicator = false
@@ -60,6 +60,20 @@ class CollectionsVC : UIViewController {
         collectionTap.cancelsTouchesInView = false
         collectionView.addGestureRecognizer(collectionTap)
    
+    }
+    
+    
+    func observePosts(){
+        
+        FIRFireStoreService.shared.observeUsersJoinedCollections { (collections, error) in
+            if let err = error {
+                self.alert(message: err.localizedDescription)
+            } else {
+                guard let collections = collections else { return }
+                self.collections = collections // TODO: - FIx all this
+                self.collectionView.reloadData()
+            }
+        }
     }
     
     // TODO: - Either set a timer to refresh the collection view every 5 seconds, or schedule a timer for each cell on view appear.
@@ -167,14 +181,14 @@ class CollectionsVC : UIViewController {
 
 extension CollectionsVC : UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return CurrentUser.shared.collections.count
+        return collections.count
     }
     
    
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "CollectionCell", for: indexPath) as! CollectionCell
        
-        let collection = CurrentUser.shared.collections[indexPath.row]// yourArray.sortInPlace{$0.timestamp < $1.timestamp}
+        let collection = collections[indexPath.row]
         let now = NSDate().timeIntervalSince1970
         let fourMinsAgo = now - (60 * 4)
         let timeDifference = (fourMinsAgo - collection.timeInitiated)

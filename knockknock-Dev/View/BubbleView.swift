@@ -27,9 +27,11 @@ class BubbleView : UIButton , CAAnimationDelegate {
         self.clipsToBounds = true
         let imageView = UIImageView(frame: self.frame)
         let url = URL(string: collection.thumbnailURL)
-        let image = UIImage()
+        self.alpha = 0
+        
         imageView.sd_setImage(with: url) { (image, error, cache, url) in // TODO: - error handle no load
             self.setImage(imageView.image, for: .normal)
+            self.alpha = 1
         }
        
         self.imageView?.contentMode = .scaleAspectFill
