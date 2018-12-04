@@ -48,5 +48,8 @@ class FIRAuthService {
     
     func checkForCurrentUser(completion : @escaping (_ user : User?) -> ()) {
         completion(Auth.auth().currentUser)
+        
     }
+    
+
 }

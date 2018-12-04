@@ -18,6 +18,23 @@
 		AA2BA03221B563B90037636A /* UIViewController+Alerts.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA2BA03121B563B90037636A /* UIViewController+Alerts.swift */; };
 		AA2BA03421B567E60037636A /* FIRFireStoreService.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA2BA03321B567E60037636A /* FIRFireStoreService.swift */; };
 		AA2BA03621B56D370037636A /* FIRStorageService.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA2BA03521B56D370037636A /* FIRStorageService.swift */; };
+		AA2BA03821B5D5C30037636A /* MainVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA2BA03721B5D5C30037636A /* MainVC.swift */; };
+		AA2BA03A21B5D6460037636A /* NavigationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA2BA03921B5D6460037636A /* NavigationView.swift */; };
+		AA2BA04021B5D6570037636A /* BubblesVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA2BA03B21B5D6540037636A /* BubblesVC.swift */; };
+		AA2BA04121B5D6570037636A /* CollectionDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA2BA03C21B5D6550037636A /* CollectionDetailVC.swift */; };
+		AA2BA04221B5D6570037636A /* CollectionsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA2BA03D21B5D6560037636A /* CollectionsVC.swift */; };
+		AA2BA04321B5D6570037636A /* FriendsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA2BA03E21B5D6570037636A /* FriendsVC.swift */; };
+		AA2BA04421B5D6570037636A /* CameraVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA2BA03F21B5D6570037636A /* CameraVC.swift */; };
+		AA2BA04C21B5D68E0037636A /* BubbleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA2BA04621B5D68A0037636A /* BubbleView.swift */; };
+		AA2BA04D21B5D68E0037636A /* FriendCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA2BA04721B5D68B0037636A /* FriendCell.swift */; };
+		AA2BA04E21B5D68E0037636A /* SelectedCellHighlightView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA2BA04821B5D68C0037636A /* SelectedCellHighlightView.swift */; };
+		AA2BA04F21B5D68E0037636A /* CustomSegues.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA2BA04921B5D68C0037636A /* CustomSegues.swift */; };
+		AA2BA05021B5D68E0037636A /* CollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA2BA04A21B5D68D0037636A /* CollectionCell.swift */; };
+		AA2BA05121B5D68E0037636A /* ParticipationCountBubble.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA2BA04B21B5D68E0037636A /* ParticipationCountBubble.swift */; };
+		AA2BA05321B5D9320037636A /* Friend.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA2BA05221B5D9320037636A /* Friend.swift */; };
+		AA2BA05521B5D9860037636A /* ScrollVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA2BA05421B5D9860037636A /* ScrollVC.swift */; };
+		AA2BA05721B5DA6B0037636A /* Collection.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA2BA05621B5DA6B0037636A /* Collection.swift */; };
+		AA2BA05921B5DC960037636A /* CurrentUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA2BA05821B5DC960037636A /* CurrentUser.swift */; };
 		D15B3A7F96FF046AE2FF38BA /* Pods_knockknock_Dev.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0E0BCA2FF15ED7F1B91983A4 /* Pods_knockknock_Dev.framework */; };
 /* End PBXBuildFile section */
 
@@ -38,6 +55,23 @@
 		AA2BA03121B563B90037636A /* UIViewController+Alerts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Alerts.swift"; sourceTree = "<group>"; };
 		AA2BA03321B567E60037636A /* FIRFireStoreService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FIRFireStoreService.swift; sourceTree = "<group>"; };
 		AA2BA03521B56D370037636A /* FIRStorageService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FIRStorageService.swift; sourceTree = "<group>"; };
+		AA2BA03721B5D5C30037636A /* MainVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainVC.swift; sourceTree = "<group>"; };
+		AA2BA03921B5D6460037636A /* NavigationView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavigationView.swift; sourceTree = "<group>"; };
+		AA2BA03B21B5D6540037636A /* BubblesVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BubblesVC.swift; sourceTree = "<group>"; };
+		AA2BA03C21B5D6550037636A /* CollectionDetailVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionDetailVC.swift; sourceTree = "<group>"; };
+		AA2BA03D21B5D6560037636A /* CollectionsVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionsVC.swift; sourceTree = "<group>"; };
+		AA2BA03E21B5D6570037636A /* FriendsVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FriendsVC.swift; sourceTree = "<group>"; };
+		AA2BA03F21B5D6570037636A /* CameraVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CameraVC.swift; sourceTree = "<group>"; };
+		AA2BA04621B5D68A0037636A /* BubbleView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BubbleView.swift; sourceTree = "<group>"; };
+		AA2BA04721B5D68B0037636A /* FriendCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FriendCell.swift; sourceTree = "<group>"; };
+		AA2BA04821B5D68C0037636A /* SelectedCellHighlightView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectedCellHighlightView.swift; sourceTree = "<group>"; };
+		AA2BA04921B5D68C0037636A /* CustomSegues.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomSegues.swift; sourceTree = "<group>"; };
+		AA2BA04A21B5D68D0037636A /* CollectionCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionCell.swift; sourceTree = "<group>"; };
+		AA2BA04B21B5D68E0037636A /* ParticipationCountBubble.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParticipationCountBubble.swift; sourceTree = "<group>"; };
+		AA2BA05221B5D9320037636A /* Friend.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Friend.swift; sourceTree = "<group>"; };
+		AA2BA05421B5D9860037636A /* ScrollVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScrollVC.swift; sourceTree = "<group>"; };
+		AA2BA05621B5DA6B0037636A /* Collection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Collection.swift; sourceTree = "<group>"; };
+		AA2BA05821B5DC960037636A /* CurrentUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentUser.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -108,8 +142,15 @@
 		AA2BA02821B55CA80037636A /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				AA2BA01621B556470037636A /* LoginVC.swift */,
-				AA2BA02C21B55CDE0037636A /* CreateAccountVC.swift */,
+				AA2BA05421B5D9860037636A /* ScrollVC.swift */,
+				AA2BA03B21B5D6540037636A /* BubblesVC.swift */,
+				AA2BA03E21B5D6570037636A /* FriendsVC.swift */,
+				AA2BA03D21B5D6560037636A /* CollectionsVC.swift */,
+				AA2BA03C21B5D6550037636A /* CollectionDetailVC.swift */,
+				AA2BA03F21B5D6570037636A /* CameraVC.swift */,
+				AA2BA03721B5D5C30037636A /* MainVC.swift */,
+				AA2BA03921B5D6460037636A /* NavigationView.swift */,
+				AA2BA04521B5D65E0037636A /* Authentication */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -117,6 +158,12 @@
 		AA2BA02921B55CAD0037636A /* View */ = {
 			isa = PBXGroup;
 			children = (
+				AA2BA04621B5D68A0037636A /* BubbleView.swift */,
+				AA2BA04A21B5D68D0037636A /* CollectionCell.swift */,
+				AA2BA04921B5D68C0037636A /* CustomSegues.swift */,
+				AA2BA04721B5D68B0037636A /* FriendCell.swift */,
+				AA2BA04B21B5D68E0037636A /* ParticipationCountBubble.swift */,
+				AA2BA04821B5D68C0037636A /* SelectedCellHighlightView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -124,6 +171,9 @@
 		AA2BA02A21B55CB20037636A /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				AA2BA05221B5D9320037636A /* Friend.swift */,
+				AA2BA05621B5DA6B0037636A /* Collection.swift */,
+				AA2BA05821B5DC960037636A /* CurrentUser.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -144,6 +194,15 @@
 				AA2BA03121B563B90037636A /* UIViewController+Alerts.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		AA2BA04521B5D65E0037636A /* Authentication */ = {
+			isa = PBXGroup;
+			children = (
+				AA2BA01621B556470037636A /* LoginVC.swift */,
+				AA2BA02C21B55CDE0037636A /* CreateAccountVC.swift */,
+			);
+			path = Authentication;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -230,6 +289,7 @@
 				"${BUILT_PRODUCTS_DIR}/BoringSSL/openssl.framework",
 				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework",
+				"${BUILT_PRODUCTS_DIR}/LLSimpleCamera/LLSimpleCamera.framework",
 				"${BUILT_PRODUCTS_DIR}/NVActivityIndicatorView/NVActivityIndicatorView.framework",
 				"${BUILT_PRODUCTS_DIR}/Protobuf/Protobuf.framework",
 				"${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework",
@@ -246,6 +306,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/openssl.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleUtilities.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/LLSimpleCamera.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/NVActivityIndicatorView.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Protobuf.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDWebImage.framework",
@@ -310,12 +371,29 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AA2BA04C21B5D68E0037636A /* BubbleView.swift in Sources */,
+				AA2BA05521B5D9860037636A /* ScrollVC.swift in Sources */,
+				AA2BA04E21B5D68E0037636A /* SelectedCellHighlightView.swift in Sources */,
 				AA2BA03621B56D370037636A /* FIRStorageService.swift in Sources */,
+				AA2BA03A21B5D6460037636A /* NavigationView.swift in Sources */,
+				AA2BA05021B5D68E0037636A /* CollectionCell.swift in Sources */,
+				AA2BA04F21B5D68E0037636A /* CustomSegues.swift in Sources */,
+				AA2BA04D21B5D68E0037636A /* FriendCell.swift in Sources */,
 				AA2BA01721B556470037636A /* LoginVC.swift in Sources */,
 				AA2BA03421B567E60037636A /* FIRFireStoreService.swift in Sources */,
 				AA2BA02721B559C70037636A /* FIRAuthService.swift in Sources */,
+				AA2BA04121B5D6570037636A /* CollectionDetailVC.swift in Sources */,
+				AA2BA04221B5D6570037636A /* CollectionsVC.swift in Sources */,
 				AA2BA02D21B55CDE0037636A /* CreateAccountVC.swift in Sources */,
+				AA2BA04021B5D6570037636A /* BubblesVC.swift in Sources */,
+				AA2BA04421B5D6570037636A /* CameraVC.swift in Sources */,
+				AA2BA05321B5D9320037636A /* Friend.swift in Sources */,
+				AA2BA03821B5D5C30037636A /* MainVC.swift in Sources */,
 				AA2BA03221B563B90037636A /* UIViewController+Alerts.swift in Sources */,
+				AA2BA05721B5DA6B0037636A /* Collection.swift in Sources */,
+				AA2BA05121B5D68E0037636A /* ParticipationCountBubble.swift in Sources */,
+				AA2BA04321B5D6570037636A /* FriendsVC.swift in Sources */,
+				AA2BA05921B5DC960037636A /* CurrentUser.swift in Sources */,
 				AA2BA01521B556470037636A /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

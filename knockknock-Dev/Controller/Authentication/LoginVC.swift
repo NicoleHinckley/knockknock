@@ -48,6 +48,7 @@ class LoginVC: UIViewController {
                 self.alert(message: "Unknown error creating an account", title: "Error")
                 return
             }
+            
             self.performSegue(withIdentifier: "toHome", sender: nil)
         }
     }
