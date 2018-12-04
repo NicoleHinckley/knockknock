@@ -85,34 +85,25 @@ class FIRFireStoreService {
             } else {
                 var collectionsArray = [Collection]()
                 let dispatchGroup = DispatchGroup()
-                for change in querySnapshot!.documentChanges {
+                for document in querySnapshot!.documents {
+                    dispatchGroup.enter()
+                    let ref = self.db.collection(Collections.collections).document(document.documentID)
+                    ref.getDocument(completion: { (snapshot, error) in
+                         dispatchGroup.leave()
+                        if let error = error {
+                            return
+                        }
+                        if let collection = Collection(dictionary: (snapshot?.data())!) {
+                        collectionsArray.append(collection)
+                        }
+                    })
+                 
                     
-                    switch change.type {
-                    case .added :
-                        dispatchGroup.enter()
-                        let document = change.document
-                     
-                        let ref = self.db.collection(Collections.collections).document(document.documentID)
-                        ref.getDocument(completion: { (snapshot, error) in
-                            dispatchGroup.leave()
-                            if let _ = error {
-                               return
-                            } else {
-                                guard let dataDict = snapshot?.data() else { return }
-                                guard let collection = Collection(dictionary: dataDict) else { return }
-                                collectionsArray.append(collection)
-                            }
-                        })
-                        
-                    case .removed : print("Removed")
-                    case .modified : print("Modified")
-                    }
                 }
                 dispatchGroup.notify(queue: .main, execute: {
-                    print("Done")
-                    completion(collectionsArray, nil)
+                    let sorted = collectionsArray.sorted {$0.timeInitiated > $1.timeInitiated}
+                    completion(sorted, nil)
                 })
-            
             }
             }
         }

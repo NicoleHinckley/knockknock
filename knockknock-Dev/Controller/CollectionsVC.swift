@@ -87,7 +87,7 @@ class CollectionsVC : UIViewController {
             guard !isInSelectingMode else { return }
             let cell = self.collectionView?.cellForItem(at: indexPath)
             
-            let collection = CurrentUser.shared.collections[indexPath.row]// TODO: - crash index out of range
+            let collection = collections[indexPath.row]// TODO: - crash index out of range
             
             guard collection.locked == false else { return }
            
@@ -227,7 +227,7 @@ extension CollectionsVC : UICollectionViewDataSource, UICollectionViewDelegate, 
  //        print(collections[indexPath.row].locked)
         let cell = collectionView.cellForItem(at: indexPath) as! CollectionCell
         
-        let collection = CurrentUser.shared.collections[indexPath.row]
+        let collection = collections[indexPath.row]
         collection.isHighlighted = true
         
         selectedIndexes.append(indexPath)
@@ -237,7 +237,7 @@ extension CollectionsVC : UICollectionViewDataSource, UICollectionViewDelegate, 
     func collectionView(_ collectionView: UICollectionView, didDeselectItemAt indexPath: IndexPath) {
         
         guard let cell = collectionView.cellForItem(at: indexPath) as? CollectionCell else { return } //  TODO: - crashing here nil
-        let collection = CurrentUser.shared.collections[indexPath.row]
+        let collection = collections[indexPath.row]
         collection.isHighlighted = false
         cell.toggleHighlight()
     }
@@ -245,7 +245,7 @@ extension CollectionsVC : UICollectionViewDataSource, UICollectionViewDelegate, 
         guard let selectedItems = collectionView.indexPathsForSelectedItems else { return }
         for indexPath in selectedItems {
             collectionView.deselectItem(at: indexPath, animated: animated)
-            let collection = CurrentUser.shared.collections[indexPath.row]
+            let collection = collections[indexPath.row]
             collection.isHighlighted = false
             collectionView.reloadData()
         }
